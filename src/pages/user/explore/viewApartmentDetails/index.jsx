@@ -33,11 +33,9 @@ const ViewApartmentDetails = () => {
     dispatch(getSingleProperty(propId));
   }, []);
 
-  console.log(singleProperty);
-
   const returnVideo = () => {
     if (singleProperty) {
-      if (singleProperty.videos){
+      if (singleProperty.videos.length > 0){
         return singleProperty.videos[0].video;
 
       }
@@ -50,7 +48,6 @@ const ViewApartmentDetails = () => {
     }
   };
 
-  console.log(returnVideo());
 
   return (
     <div className="px-6 md:px-0">
