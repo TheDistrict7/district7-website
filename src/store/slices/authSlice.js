@@ -23,10 +23,9 @@ export const registerUser = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
-        error.message ||
-        error.toString();
+          error.response.data.message || error.response.data.detail) ||
+        error.message ||     
+        error.toString(); //TODO UX Capitalize first letter(.charAt(0).toUpperCase() + message.slice(1))
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -44,7 +43,7 @@ export const registerLandlord = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -65,9 +64,7 @@ export const loginUser = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
-        error.response.data.detail ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       console.log(message);
@@ -92,8 +89,7 @@ export const getUser = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message) ||
-        error.response.data.detail ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -113,8 +109,7 @@ export const updateUser = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message) ||
-        error.response.data.detail ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -133,7 +128,7 @@ export const changePassword = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       console.log(message);

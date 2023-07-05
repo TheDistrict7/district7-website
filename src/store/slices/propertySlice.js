@@ -23,8 +23,7 @@ export const getAllProperties = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -43,8 +42,7 @@ export const searchPropertiesFor = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -63,8 +61,7 @@ export const getSingleProperty = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -83,8 +80,7 @@ export const getUserLikedProperties = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -103,8 +99,7 @@ export const likeProperty = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -123,8 +118,7 @@ export const addProperty = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          // error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -143,8 +137,7 @@ export const removeProperty = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -164,8 +157,7 @@ export const updateProperty = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
         error.toString();
       return thunkAPI.rejectWithValue(message);
@@ -184,10 +176,9 @@ export const getUserAddedProperties = createAsyncThunk(
       const message =
         (error.response &&
           error.response.data &&
-          error.response.data.message &&
-          error.response.data.detail) ||
+          error.response.data.message || error.response.data.detail) ||
         error.message ||
-        error.toString();
+        error.toString();;
       return thunkAPI.rejectWithValue(message);
     }
   }
