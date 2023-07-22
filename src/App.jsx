@@ -27,24 +27,24 @@ import { userSelector } from "./store/slices/authSlice";
 import Home from "./pages/landingPages/homePage";
 import { Toaster } from "react-hot-toast";
 import UpdateProperty from "./pages/landlord/updateProperty";
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
 import Contact from "./pages/landingPages/contact";
 import Search from "./pages/landingPages/search";
 import Services from "./pages/landingPages/services";
 import About from "./pages/landingPages/About";
 import ViewApartmentDetails from "./pages/user/explore/viewApartmentDetails";
 
-const TRACKING_ID = "UA-192954122-2"; // YOUR_OWN_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+// const TRACKING_ID = "UA-192954122-2"; // YOUR_OWN_TRACKING_ID
+// ReactGA.initialize(TRACKING_ID);
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const { isLoggedIn } = useSelector(userSelector);
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+  // useEffect(() => {
+  //   ReactGA.pageview(window.location.pathname + window.location.search);
+  // }, []);
 
   return (
     <>
